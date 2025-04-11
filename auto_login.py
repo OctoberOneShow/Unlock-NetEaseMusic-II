@@ -39,7 +39,7 @@ def extension_login():
     logging.info("Initializing Chrome WebDriver")
     try:
         # ✅ 使用 win64 架构的 chromedriver
-        service = Service(ChromeDriverManager(os_type="win64").install())
+        service = Service(ChromeDriverManager().install())
         browser = webdriver.Chrome(service=service, options=chrome_options)
     except Exception as e:
         logging.error(f"Failed to initialize ChromeDriver: {e}")
